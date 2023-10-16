@@ -130,7 +130,7 @@ struct DragToDismissModifier: ViewModifier {
                     isOpen = false
                     progress = 0.0
                 } else {
-                    withAnimation(.bouncy) {
+                    withAnimation(.default) {
                         offset = 0.0
                         progress = 0.0
                     }

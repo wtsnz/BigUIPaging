@@ -28,13 +28,13 @@ struct PlatformPageIndicator: UIViewRepresentable {
             for: .valueChanged
         )
 
-        if #available(iOS 17.0, *) {
-            if let duration = context.environment.pageDuration {
-                let progress = UIPageControlTimerProgress(preferredDuration: duration)
-                progress.resetsToInitialPageAfterEnd = true
-                control.progress = progress
-            }
-        }
+//        if #available(iOS 17.0, *) {
+//            if let duration = context.environment.pageDuration {
+//                let progress = UIPageControlTimerProgress(preferredDuration: duration)
+//                progress.resetsToInitialPageAfterEnd = true
+//                control.progress = progress
+//            }
+//        }
         
         for entry in icons {
             let page = entry.key
@@ -66,15 +66,15 @@ struct PlatformPageIndicator: UIViewRepresentable {
             control.pageIndicatorTintColor = UIColor(color)
         }
         
-        if #available(iOS 17.0, *) {
-            if let timer = control.progress as? UIPageControlTimerProgress {
-                if isProgressing && timer.isRunning == false {
-                    timer.resumeTimer()
-                } else if isProgressing == false && timer.isRunning == true {
-                    timer.pauseTimer()
-                }
-            }
-        }
+//        if #available(iOS 17.0, *) {
+//            if let timer = control.progress as? UIPageControlTimerProgress {
+//                if isProgressing && timer.isRunning == false {
+//                    timer.resumeTimer()
+//                } else if isProgressing == false && timer.isRunning == true {
+//                    timer.pauseTimer()
+//                }
+//            }
+//        }
     }
     
     func makeCoordinator() -> Coordinator {

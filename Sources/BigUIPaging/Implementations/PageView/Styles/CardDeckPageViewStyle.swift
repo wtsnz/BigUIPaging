@@ -91,12 +91,12 @@ struct CardDeckPageView: View {
     func snapToNearestIndex() {
         let threshold = 0.3
         if abs(dragProgress) < threshold {
-            withAnimation(.bouncy) {
+            withAnimation(.default) {
                 self.dragProgress = 0.0
             }
         } else {
             let direction = dragProgress < 0 ? -1 : 1
-            withAnimation(.smooth(duration: 0.25)) {
+            withAnimation(.default) {
                 go(to: selectedIndex + direction)
                 self.dragProgress = 0.0
             }
